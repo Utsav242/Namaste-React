@@ -1,0 +1,31 @@
+{
+  "name": "learning-react",
+  "version": "1.0.0",
+  "description": "This is React by Utsav Goel",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/Utsav242/Namaste-React)"
+  },
+  "keywords": [
+    "react",
+    "redux"
+  ],
+  "author": "Utsav Goel",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  
+    "browserslist":[
+"last 2 version"
+    ]
+  
+}
