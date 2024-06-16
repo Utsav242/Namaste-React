@@ -1,3 +1,69 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 #heading {
   color: red;
+}
+
+.header{
+display: flex;
+justify-content: space-between;
+border: 1px solid black;
+align-items: center;
+}
+
+.food-logo{
+    width: 50%;
+}
+.food-logo img{
+    width: 118px;
+}
+.nav-items ul {
+    display: flex;
+    gap: 40px;
+    margin-right: 20px;
+
+}
+
+.nav-items ul li{
+    list-style: none;
+    cursor: pointer;
+}
+
+.restro-container {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 20px;
+}
+.restroCard {
+    width: 200px;
+    border: 1px solid #000;
+    cursor: pointer;
+    /* padding: 20px; */
+    border-radius: 5px;
+}
+
+.restroCard:hover{
+    border: 1px solid #228bef;
+}
+.foodImg {
+    width: 100%;
+}
+.foodImg img{
+    max-width: 198px;
+    height: 100%;
+}
+.foodDetail{
+padding: 10px 0 0 16px;
+}
+.foodDetail h5{
+    padding: 10px 0;
+}
+.foodDetail span{
+    padding-top: 10px;
 }
