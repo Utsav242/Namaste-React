@@ -19,4 +19,14 @@
 - HTTPs
 - Tree Shaking - remove uncessary code
 - Different dev and prod bundles
-- 
+
+
+# React Hooks
+(Normal JS functions)
+
+1. useState()
+- useState() superpowerful state to create state variable.
+2. useEffect()
+
+
+# https://github.com/acdlite/react-fiber-architecture

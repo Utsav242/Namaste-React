@@ -67,3 +67,11 @@ padding: 10px 0 0 16px;
 .foodDetail span{
     padding-top: 10px;
 }
+
+.filter-btn{
+    padding: 12px;
+    margin: 10px;
+    cursor: pointer;
+    background-color: black;
+    color: #fff;
+}
