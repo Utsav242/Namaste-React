@@ -15,6 +15,14 @@ border: 1px solid black;
 align-items: center;
 }
 
+.login-btn{
+    padding: 6px;
+    background-color: #000;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    border: none;
+}
 .food-logo{
     width: 50%;
 }
@@ -68,10 +76,44 @@ padding: 10px 0 0 16px;
     padding-top: 10px;
 }
 
+.filter{
+    display: flex;
+}
 .filter-btn{
     padding: 12px;
     margin: 10px;
     cursor: pointer;
     background-color: black;
     color: #fff;
+}
+
+/* Shimmer Card CSS */
+.shimmer-container{
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 20px;
+}
+.shimmer-card{
+    width: 200px;
+    height: 200px;
+    border: 1px solid #000;
+    cursor: pointer;
+    /* padding: 20px; */
+    border-radius: 5px;
+    background-color: #e4e4e4;
+}
+
+/* end */
+
+.search-box{
+    margin: 20px 20px;
+}
+.search-box input{
+    padding: 10px;
+}
+.search-box button{
+    padding: 10px;
+    cursor: pointer;
 }
