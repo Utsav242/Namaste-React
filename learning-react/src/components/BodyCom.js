@@ -6,14 +6,14 @@ const BodyCom = () => {
   // state variable - Super powerful variable.
 
   const [listofRestro, setListofRestro] = useState([]);
-  const [filterResto, setFilteredRestro] =useState([]);
+  const [filterResto, setFilteredRestro] = useState([]);
   const [searchText, setSearchText] = useState("");
 
   // Filter Restro card update the ui card
 
   const handleInputClick = () => {
     const filteredRestro = listofRestro.filter((res) =>
-      res.title.toLowerCase().includes(searchText.toLowerCase())
+      res.info.name.toLowerCase().includes(searchText.toLowerCase())
     );
     setFilteredRestro(filteredRestro);
   };
@@ -27,11 +27,19 @@ const BodyCom = () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch("https://fakestoreapi.com/products");
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
+    );
     const json = await data.json();
-    setListofRestro(json);
-    setFilteredRestro(json)
-    console.log(json);
+    setListofRestro(
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setFilteredRestro(
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    console.log(
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   };
 
   // Conditional Rendering with teritary operator
@@ -51,9 +59,10 @@ const BodyCom = () => {
           className="filter-btn"
           onClick={() => {
             const filtered = listofRestro.filter(
-              (res) => res?.rating?.rate > 4
+              (res) => res.info.avgRating > 4
             );
             setListofRestro(filtered);
+            setFilteredRestro(filtered);
           }}
         >
           Top Rated Restaurant
@@ -62,7 +71,7 @@ const BodyCom = () => {
 
       <div className="restro-container">
         {filterResto.map((restaurant) => (
-          <ResturantCard key={restaurant.id} restData={restaurant} />
+          <ResturantCard key={restaurant.info.id} restData={restaurant} />
         ))}
       </div>
     </div>

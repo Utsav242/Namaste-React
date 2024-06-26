@@ -64,7 +64,7 @@ align-items: center;
 }
 .foodImg img{
     max-width: 198px;
-    height: 100%;
+    height: 250px;
 }
 .foodDetail{
 padding: 10px 0 0 16px;
