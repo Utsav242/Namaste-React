@@ -2,6 +2,7 @@ import ResturantCard from "./ResturantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const BodyCom = () => {
   // state variable - Super powerful variable.
@@ -42,6 +43,12 @@ const BodyCom = () => {
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
+
+  const onlinestatus = useOnlineStatus();
+  if(onlinestatus == false ) 
+    return(
+  <h1>Looks like you're offline !!</h1>
+  );
 
   // Conditional Rendering with teritary operator
   //  if(listofRestro.length ===0){
