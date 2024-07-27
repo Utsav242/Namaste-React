@@ -13,12 +13,12 @@ const Header = () => {
 
   const onlineStatus = useOnlineStatus();
   return (
-    <div className="header">
+    <div className="flex justify-between shadow-lg items-center">
       <div className="food-logo">
-        <img src={LOGO_URL} alt="food logo" />
+        <img className="w-20" src={LOGO_URL} alt="food logo" />
       </div>
-      <div className="nav-items">
-        <ul>
+      <div className="">
+        <ul className="flex  gap-5 pr-5">
           <li>Online Status :{onlineStatus ? 'greens' : 'red' } </li>
           <li>
             <Link to="/">Home</Link>

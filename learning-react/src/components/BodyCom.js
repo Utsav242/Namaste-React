@@ -58,13 +58,13 @@ const BodyCom = () => {
     <Shimmer />
   ) : (
     <div className="body-container">
-      <div className="filter">
-        <div className="search-box">
-          <input type="text" value={searchText} onChange={handleInputChange} />
-          <button onClick={handleInputClick}>Search</button>
+      <div className="flex justify-between">
+        <div className="mt-5">
+          <input type="text" className=" border-solid border-2 border-indigo-60 rounded-lg" value={searchText} onChange={handleInputChange} />
+          <button className="bg-green-400 px-2" onClick={handleInputClick}>Search</button>
         </div>
         <button
-          className="filter-btn"
+          className="rounded-lg bg-slate-500 p-2 m-2"
           onClick={() => {
             const filtered = listofRestro.filter(
               (res) => res.info.avgRating > 4
@@ -77,7 +77,7 @@ const BodyCom = () => {
         </button>
       </div>
 
-      <div className="restro-container">
+      <div className="flex flex-wrap">
         {filterResto.map((restaurant) => (
           <Link
             key={restaurant?.info?.id}

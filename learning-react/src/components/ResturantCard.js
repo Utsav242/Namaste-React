@@ -7,13 +7,13 @@ const ResturantCard = ({ restData }) => {
     restData.info;
 
   return (
-    <div className="restroCard">
+    <div className="m-4 p-4 w-[200px] h-80  bg-zinc-500 rounded-lg">
       <div className="foodImg">
-        <img src={CDN_URL + cloudinaryImageId} alt="foodImg" />
+        <img className="rounded-lg" src={CDN_URL + cloudinaryImageId} alt="foodImg" />
       </div>
       <div className="foodDetail">
-        <h4>{name}</h4>
-        <h5>{cuisines.join(", ")}</h5>
+        <h4 className="text-white font-bold">{name}</h4>
+        <h5 className="">{cuisines.join(", ")}</h5>
         <p>{costForTwo}</p>
         <span>{avgRating} Stars</span>
       </div>
