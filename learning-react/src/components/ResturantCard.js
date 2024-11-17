@@ -1,8 +1,15 @@
+import { useContext } from "react";
 import { CDN_URL } from "../utils/constant";
+import UserContext from "../utils/UserContext";
+
+
+
 
 const ResturantCard = ({ restData }) => {
-  // Destructring props
 
+  const {loggedInUser} = useContext(UserContext);
+  
+  // Destructring props
   const { cloudinaryImageId, costForTwo, name, cuisines, avgRating } =
     restData.info;
 
@@ -16,9 +23,25 @@ const ResturantCard = ({ restData }) => {
         <h5 className="">{cuisines.join(", ")}</h5>
         <p>{costForTwo}</p>
         <span>{avgRating} Stars</span>
+        <h4>User : {loggedInUser}</h4>
       </div>
     </div>
   );
 };
+
+
+// Highorder comp
+
+export const withLocaltiy=(ResturantCard)=>{
+  return(props) =>{
+    return(
+      <>
+      <label style={color= 'black'}>RatingLABEL</label>
+      <ResturantCard {...props} />
+      </>
+    )
+  }
+
+}
 
 export default ResturantCard;
