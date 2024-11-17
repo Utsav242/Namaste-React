@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { LOGO_URL } from "../utils/constant";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
   const [buttonchanged, setButtonChanged] = useState("Login");
@@ -10,6 +11,9 @@ const Header = () => {
       ? setButtonChanged("Logout")
       : setButtonChanged("Login");
   };
+
+const {loggedInUser} = useContext(UserContext);
+console.log("datataat", loggedInUser)
 
   const onlineStatus = useOnlineStatus();
   return (
@@ -36,6 +40,7 @@ const Header = () => {
           <button className="login-btn" onClick={handleClickBtn}>
             {buttonchanged}
           </button>
+          <li>{loggedInUser}</li>
         </ul>
       </div>
     </div>
