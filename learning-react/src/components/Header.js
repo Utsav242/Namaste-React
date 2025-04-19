@@ -3,6 +3,7 @@ import { LOGO_URL } from "../utils/constant";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [buttonchanged, setButtonChanged] = useState("Login");
@@ -11,11 +12,15 @@ const Header = () => {
       ? setButtonChanged("Logout")
       : setButtonChanged("Login");
   };
-
-const {loggedInUser} = useContext(UserContext);
-console.log("datataat", loggedInUser)
-
   const onlineStatus = useOnlineStatus();
+  const { loggedInUser } = useContext(UserContext);
+  console.log("datataat", loggedInUser);
+
+  // Subscribe to the store using a selector
+
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log("cart", cartItems);
+
   return (
     <div className="flex justify-between shadow-lg items-center">
       <div className="food-logo">
@@ -23,7 +28,7 @@ console.log("datataat", loggedInUser)
       </div>
       <div className="">
         <ul className="flex  gap-5 pr-5">
-          <li>Online Status :{onlineStatus ? 'greens' : 'red' } </li>
+          <li>Online Status :{onlineStatus ? "greens" : "red"} </li>
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -36,7 +41,9 @@ console.log("datataat", loggedInUser)
           <li>
             <Link to="/grocery">Grocery</Link>
           </li>
-          {/* <li>Cart</li> */}
+          <li className="font-bold">
+          <Link to="/cart">Cart - ({cartItems.length} items)</Link>
+          </li>
           <button className="login-btn" onClick={handleClickBtn}>
             {buttonchanged}
           </button>

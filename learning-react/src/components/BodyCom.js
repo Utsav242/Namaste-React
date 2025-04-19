@@ -88,7 +88,7 @@ const BodyCom = () => {
 
         <div>
           <label>User Name</label>
-          <input className="border border-black" value={loggedInUser} onChange={(e)=> setUserInfo(e.target.value)}></input>
+          {/* <input className="border border-black" value={loggedInUser} onChange={(e)=> setUserInfo(e.target.value)}></input> */}
         </div>
       </div>
 
