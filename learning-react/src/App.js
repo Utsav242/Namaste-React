@@ -13,8 +13,6 @@ import {Provider} from "react-redux";
 import appStore from "./utils/appStore";
 import Cart from "./components/cart";
 
-const Grocery = lazy(() => import("./components/Grocery"));
-
 const AppLayout = () => {
   // authentication
 
