@@ -65,6 +65,7 @@ const BodyCom = () => {
         <div className="mt-5">
           <input
             type="text"
+            data-testid="searchInput"
             className=" border-solid border-2 border-indigo-60 rounded-lg"
             value={searchText}
             onChange={handleInputChange}
